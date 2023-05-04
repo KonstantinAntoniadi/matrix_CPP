@@ -2,44 +2,9 @@
 
 Implementation of the s21_matrix_oop.h library.
 
-
-## Chapter I
-
-## Introduction
-
-In this project, you will implement the matrix library that you already know from the **s21_matrix** project, but this time you will be using the object-oriented approach (see materials). The object-oriented approach allows to implement a library for matrices as a separate class whose objects have defined operations, that can be represented both as methods and as standard operators +, -, *, etc.
-
 ## Information
 
-### A reminder of the matrix basics
-
-Matrix is a rectangular table of numbers arranged in m rows and n columns
-
-```
-    1 2 3
-A = 4 5 6
-    7 8 9
-```
-
-```
-     1  2  3  4
-В =  5  6  7  8
-     9 10 11 12
-```
-
-You can get the desired element using indices as follows A[1,1] = 1, where the first index is the row number, the second is the column number.
-
-The order of a matrix is the number of its rows or columns. \
-The main diagonal of a square matrix is the diagonal from the upper left to the lower right corner. \
-
-A rectangular matrix (B) is a matrix with the number of rows not equal to the number of columns. \
-A square matrix (A) is a matrix with the number of rows equal to the number of columns.
-
 ## Matrix operations
-
-There is a brief description of the matrix operations below that need to be implemented in the developing library.
-They are similar to the operations you performed earlier in «structured programming», so you can see a more detailed description of them there.
-Note that some operations have exceptional situations that require special handling using the exception mechanism.
 
 | Operation | Description | Exceptional situations |
 | ----------- | ----------- | ----------- |
@@ -53,7 +18,7 @@ Note that some operations have exceptional situations that require special handl
 | `double Determinant()` | Calculates and returns the determinant of the current matrix | the matrix is not square |
 | `S21Matrix InverseMatrix()` | Calculates and returns the inverse matrix | matrix determinant is 0 |
 
-Apart from those operations, you also need to implement constructors and destructors:
+Constructors and destructors:
 
 | Method | Description |
 | ----------- | ----------- |
@@ -63,7 +28,7 @@ Apart from those operations, you also need to implement constructors and destruc
 | `S21Matrix(S21Matrix&& other)` | Move constructor |
 | `~S21Matrix()` | Destructor |
 
-And you also need to overload the following operators, partly corresponding to the operations above:
+Overload the following operators, partly corresponding to the operations above:
 
 | Operator | Description | Exceptional situations |
 | ----------- | ----------- | ----------- |
@@ -77,17 +42,3 @@ And you also need to overload the following operators, partly corresponding to t
 | `*=`  | Multiplication assignment (`MulMatrix`/`MulNumber`) | the number of columns of the first matrix does not equal the number of rows of the second matrix |
 | `(int i, int j)`  | Indexation by matrix elements (row, column) | index is outside the matrix |
 
-
-## Chapter II
-
-- The program must be developed in C++ language of C++17 standard using gcc compiler
-- The program code must be located in the src folder
-- When writing code it is necessary to follow the Google style
-- Implement the matrix as an `S21Matrix` class
-- Use only the `matrix_`, `rows_` and `cols_` fields as private.
-- Implement the access to private fields `rows_` and `cols_` via accessor and mutator. If the matrix increases in size, it is filled with zeros. If it decreases in size, the excess is simply discarded.
-- Make it as a static library (with s21_matrix_oop.h header file)
-- Implement the operations described [above](#matrix-operations)
-- Overload the operators according to the table in the chapter [above](#matrix-operations)
-- Prepare full coverage of library functions code with unit-tests using the GTest library
-- Provide a Makefile for building the library and tests (with targets all, clean, test, s21_matrix_oop.a)
