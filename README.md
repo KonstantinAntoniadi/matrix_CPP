@@ -1,4 +1,4 @@
 # matrix
 
-Implementation of the matrix_oop.h library.
+Implementation of the matrix.h library.
 
