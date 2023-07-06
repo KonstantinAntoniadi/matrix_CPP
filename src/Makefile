@@ -1,14 +1,14 @@
 CC = g++
 FLAGS = -Wall -Werror -Wextra
-STLIB = s21_matrix_oop.a
+STLIB = matrix.a
 
-all: clean build s21_matrix_oop.a test clean
+all: clean build matrix.a test clean
 
-build: s21_matrix_oop.cpp
-	@$(CC) -c $(FLAGS) -std=c++17 s21_matrix_oop.cpp -o s21_matrix_oop.o
+build: matrix.cpp
+	@$(CC) -c $(FLAGS) -std=c++17 matrix.cpp -o matrix.o
 
-s21_matrix_oop.a: build
-	@ar rcs $(STLIB) s21_*.o
+matrix.a: build
+	@ar rcs $(STLIB) *.o
 
 test: $(STLIB)
 	@$(CC) $(FLAGS) -lgtest -std=c++17 $(STLIB) test/*.cpp -o unit_test
@@ -23,4 +23,4 @@ check:
 	clang-format -n *.cpp test/*.cpp *.h 
 	@rm -rf .clang-format
 
-.PHONY: all build s21_matrix_oop.a test check
+.PHONY: all build matrix.a test check

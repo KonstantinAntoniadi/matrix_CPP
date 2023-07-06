@@ -1,7 +1,7 @@
 #include "unit_test.h"
 
 TEST(CalcComplementsOperationTest, 3x3) {
-  S21Matrix matrix_1(3, 3);
+  Matrix matrix_1(3, 3);
   matrix_1(0, 0) = 1.0;
   matrix_1(0, 1) = 2.0;
   matrix_1(0, 2) = 3.0;
@@ -11,9 +11,9 @@ TEST(CalcComplementsOperationTest, 3x3) {
   matrix_1(2, 0) = 5.0;
   matrix_1(2, 1) = 2.0;
   matrix_1(2, 2) = 1.0;
-  S21Matrix matrix_2 = matrix_1.CalcComplements();
+  Matrix matrix_2 = matrix_1.CalcComplements();
 
-  S21Matrix result(3, 3);
+  Matrix result(3, 3);
   result(0, 0) = 0.0;
   result(0, 1) = 10.0;
   result(0, 2) = -20.0;
@@ -28,6 +28,6 @@ TEST(CalcComplementsOperationTest, 3x3) {
 }
 
 // TEST(CalcComplementsOperationTest, NotSquare) {
-//     S21Matrix matrix(1,2);
+//     Matrix matrix(1,2);
 //     EXPECT_THROW(matrix.CalcComplements(), std::invalid_argument);
 // }

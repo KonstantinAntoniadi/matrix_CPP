@@ -1,13 +1,13 @@
 #include "unit_test.h"
 
 TEST(DeterminantOperationTest, 1x1) {
-  S21Matrix matrix(1, 1);
+  Matrix matrix(1, 1);
   matrix(0, 0) = 234.2312;
   EXPECT_DOUBLE_EQ(matrix.Determinant(), 234.2312);
 }
 
 TEST(DeterminantOperationTest, 2x2) {
-  S21Matrix matrix(2, 2);
+  Matrix matrix(2, 2);
   matrix(0, 0) = 1.23;
   matrix(0, 1) = 2.83;
   matrix(1, 0) = 3.63;
@@ -16,7 +16,7 @@ TEST(DeterminantOperationTest, 2x2) {
 }
 
 TEST(DeterminantOperationTest, 3x3) {
-  S21Matrix matrix(3, 3);
+  Matrix matrix(3, 3);
   matrix(0, 0) = 1.0;
   matrix(0, 1) = 32.12;
   matrix(0, 2) = 432.12;
@@ -30,7 +30,7 @@ TEST(DeterminantOperationTest, 3x3) {
 }
 
 TEST(DeterminantOperationTest, 4x4) {
-  S21Matrix matrix(4, 4);
+  Matrix matrix(4, 4);
   matrix(0, 0) = 1.0;
   matrix(0, 1) = 5.2;
   matrix(0, 2) = 2.6;
@@ -51,6 +51,6 @@ TEST(DeterminantOperationTest, 4x4) {
 }
 
 // TEST(DeterminantOperationTest, NotSquare) {
-//     S21Matrix matrix(1,2);
+//     Matrix matrix(1,2);
 //     EXPECT_THROW(matrix.Determinant(), std::invalid_argument);
 // }

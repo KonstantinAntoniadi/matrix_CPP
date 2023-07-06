@@ -1,7 +1,7 @@
 #include "unit_test.h"
 
 TEST(SetRowsMutatorTest, RowsGreaterSize) {
-  S21Matrix matrix_1 = S21Matrix(2, 2);
+  Matrix matrix_1 = Matrix(2, 2);
   matrix_1(0, 0) = 1.0;
   matrix_1(0, 1) = 2.0;
   matrix_1(1, 0) = 3.0;
@@ -10,7 +10,7 @@ TEST(SetRowsMutatorTest, RowsGreaterSize) {
   int rows_new = 4;
   matrix_1.set_rows(rows_new);
 
-  S21Matrix result = S21Matrix(rows_new, 2);
+  Matrix result = Matrix(rows_new, 2);
   result(0, 0) = 1.0;
   result(0, 1) = 2.0;
   result(1, 0) = 3.0;
@@ -24,7 +24,7 @@ TEST(SetRowsMutatorTest, RowsGreaterSize) {
 }
 
 TEST(SetRowsMutatorTest, RowsLessSize) {
-  S21Matrix matrix_1 = S21Matrix(2, 2);
+  Matrix matrix_1 = Matrix(2, 2);
   matrix_1(0, 0) = 1.0;
   matrix_1(0, 1) = 2.0;
   matrix_1(1, 0) = 3.0;
@@ -32,7 +32,7 @@ TEST(SetRowsMutatorTest, RowsLessSize) {
   int rows_new = 1;
   matrix_1.set_rows(rows_new);
 
-  S21Matrix result = S21Matrix(rows_new, 2);
+  Matrix result = Matrix(rows_new, 2);
   result(0, 0) = 1.0;
   result(0, 1) = 2.0;
 
@@ -40,7 +40,7 @@ TEST(SetRowsMutatorTest, RowsLessSize) {
 }
 
 TEST(SetColsMutatorTest, ColsGreaterSize) {
-  S21Matrix matrix_1 = S21Matrix(2, 2);
+  Matrix matrix_1 = Matrix(2, 2);
   matrix_1(0, 0) = 1.0;
   matrix_1(0, 1) = 2.0;
   matrix_1(1, 0) = 3.0;
@@ -49,7 +49,7 @@ TEST(SetColsMutatorTest, ColsGreaterSize) {
   int cols_new = 4;
   matrix_1.set_cols(cols_new);
 
-  S21Matrix result = S21Matrix(2, cols_new);
+  Matrix result = Matrix(2, cols_new);
   result(0, 0) = 1.0;
   result(0, 1) = 2.0;
   result(0, 2) = 0.0;
@@ -63,7 +63,7 @@ TEST(SetColsMutatorTest, ColsGreaterSize) {
 }
 
 TEST(SetColsMutatorTest, ColsLessSize) {
-  S21Matrix matrix_1 = S21Matrix(2, 2);
+  Matrix matrix_1 = Matrix(2, 2);
   matrix_1(0, 0) = 1.0;
   matrix_1(0, 1) = 2.0;
   matrix_1(1, 0) = 3.0;
@@ -72,7 +72,7 @@ TEST(SetColsMutatorTest, ColsLessSize) {
   int cols_new = 1;
   matrix_1.set_cols(cols_new);
 
-  S21Matrix result = S21Matrix(2, cols_new);
+  Matrix result = Matrix(2, cols_new);
   result(0, 0) = 1.0;
   result(1, 0) = 3.0;
 
@@ -80,11 +80,11 @@ TEST(SetColsMutatorTest, ColsLessSize) {
 }
 
 // TEST(SetRowsMutatorTest, RowsOutOfRange) {
-//     S21Matrix matrix_1 = S21Matrix(2, 2);
+//     Matrix matrix_1 = Matrix(2, 2);
 //     EXPECT_THROW(matrix_1.set_rows(-1), std::out_of_range);
 // }
 
 // TEST(SetColsMutatorTest, OutOfRange) {
-//     S21Matrix matrix_1 = S21Matrix(2, 2);
+//     Matrix matrix_1 = Matrix(2, 2);
 //     EXPECT_THROW(matrix_1.set_cols(-1), std::out_of_range);
 // }

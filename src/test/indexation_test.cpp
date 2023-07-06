@@ -1,7 +1,7 @@
 #include "unit_test.h"
 
 TEST(IndexationOperatorTest, IndexesInTheRange) {
-  S21Matrix matrix_1 = S21Matrix(2, 2);
+  Matrix matrix_1 = Matrix(2, 2);
   matrix_1(0, 0) = 1.0;
   matrix_1(0, 1) = 2.0;
   matrix_1(1, 0) = 3.0;
@@ -11,7 +11,7 @@ TEST(IndexationOperatorTest, IndexesInTheRange) {
 }
 
 // TEST(IndexationOperatorTest, IndexesOutOfRange) {
-//     S21Matrix matrix_1 = S21Matrix(2, 2);
+//     Matrix matrix_1 = Matrix(2, 2);
 //     matrix_1(0,0) = 1.0;
 //     matrix_1(0,1) = 2.0;
 //     matrix_1(1,0) = 3.0;

@@ -1,8 +1,8 @@
 #include "unit_test.h"
 
 TEST(ConstructorTest, WithoutRowsAndCols) {
-  S21Matrix matrix_1 = S21Matrix();
-  S21Matrix matrix_2 = S21Matrix(3, 3);
+  Matrix matrix_1 = Matrix();
+  Matrix matrix_2 = Matrix(3, 3);
 
   EXPECT_TRUE(matrix_1 == matrix_2);
 }
@@ -10,7 +10,7 @@ TEST(ConstructorTest, WithoutRowsAndCols) {
 TEST(ConstructorTest, WithRowsAndCols) {
   int rows = 3;
   int cols = 5;
-  S21Matrix matrix(rows, cols);
+  Matrix matrix(rows, cols);
 
   EXPECT_EQ(matrix.get_rows(), rows);
   EXPECT_EQ(matrix.get_cols(), cols);
@@ -22,7 +22,7 @@ TEST(ConstructorTest, WithRowsAndCols) {
 }
 
 TEST(ConstructorTest, CopyConstructor) {
-  S21Matrix matrix_1 = S21Matrix(3, 2);
+  Matrix matrix_1 = Matrix(3, 2);
   matrix_1(0, 0) = 1.123456;
   matrix_1(0, 1) = 4.543564;
   matrix_1(1, 0) = 2.546356;
@@ -30,21 +30,21 @@ TEST(ConstructorTest, CopyConstructor) {
   matrix_1(2, 0) = 3.254562;
   matrix_1(2, 1) = 6.252452;
 
-  S21Matrix matrix_2 = S21Matrix(matrix_1);
+  Matrix matrix_2 = Matrix(matrix_1);
 
   EXPECT_TRUE(matrix_1 == matrix_2);
 }
 
 TEST(ConstructorTest, MoveConstructor) {
-  S21Matrix matrix_1 = S21Matrix(2, 2);
+  Matrix matrix_1 = Matrix(2, 2);
   matrix_1(0, 0) = 1.0;
   matrix_1(0, 1) = 2.0;
   matrix_1(1, 0) = 3.0;
   matrix_1(1, 1) = 4.0;
-  S21Matrix matrix_2 = matrix_1 * 12.4;
+  Matrix matrix_2 = matrix_1 * 12.4;
 
-  matrix_1 = S21Matrix(std::move(matrix_2));
-  S21Matrix result = S21Matrix(2, 2);
+  matrix_1 = Matrix(std::move(matrix_2));
+  Matrix result = Matrix(2, 2);
   result(0, 0) = 12.4;
   result(0, 1) = 24.8;
   result(1, 0) = 37.2;
@@ -56,5 +56,5 @@ TEST(ConstructorTest, MoveConstructor) {
 }
 
 // TEST(Constructor, error) {
-//   EXPECT_THROW(S21Matrix matrix = S21Matrix(-3, -3), std::invalid_argument);
+//   EXPECT_THROW(Matrix matrix = Matrix(-3, -3), std::invalid_argument);
 // }

@@ -3,6 +3,6 @@
 
 #include <gtest/gtest.h>
 
-#include "../s21_matrix_oop.h"
+#include "../matrix.h"
 
-#endif // UNIT_TEST_H
+#endif  // UNIT_TEST_H
